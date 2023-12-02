@@ -1,0 +1,30 @@
+{% include "job_seekerHead.html"%}
+<div class="container-fluid" >
+    <div class="row">
+        <div class=" col-md-2">
+        </div>
+        <div class="col-md-3 mt-5">
+            <h3>Certificate Add Here</h3>
+            <form action="add_certifications_action" method="post">
+                <div class="tab-content container-fluid mt-1">
+                </div>
+                <div id="job_seeker" class="container tab-pane "></div>
+                <div class="md-3 mt-3">
+                   <label for="certification_title">Certification Title</label>
+                    <input type="text" name="certification_title" id="certification_title" class="form-control" placeholder="Enter Certification Title" required>
+                </div>
+                <div class="md-3 mt-3">
+                   <label for="certification">Certification</label>
+                    <input type="file" name="certification"  id="certification" class="form-control" placeholder="choose file" required>
+                </div>
+                <div class="md-3 mt-3 ">
+                    <input type="submit" value="Add Certificate" class="btn btn-primary w-100">
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <div class="mt-3">
+            </div>
+        </div>
+    </div>
+</div>

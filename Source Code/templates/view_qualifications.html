@@ -1,0 +1,20 @@
+{% include "job_seekerHead.html" %}
+<div class="text-center h4">Qualifications</div>
+<div class="container">
+    <table border="1" class="table table-bordered">
+        <tr>
+            <th>Qualification Id</th>
+            <th>Job seeker Id</th>
+            <th>Year of Passing</th>
+            <th>Percentage</th>
+        </tr>
+        {% for qualification in qualifications: %}
+        <tr>
+            <td>{{qualification[0]}}</td>
+            <td>{{qualification[1]}}</td>
+            <td>{{qualification[2]}}</td>
+            <td>{{qualification[3]}} %</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>

@@ -1,0 +1,22 @@
+{% include "job_seekerHead.html" %}
+<div class="text-center h4">Certifications</div>
+<div class="container">
+    <table border="1" class="table table-bordered mt-3">
+        <tr>
+            <th>Certificate Id</th>
+            <th>Job seeker Id</th>
+            <th>Certificate Title</th>
+            <th>Certificate</th>
+        </tr>
+        {% for certification in certifications: %}
+        <tr>
+            <td>{{certification[0]}}</td>
+            <td>{{certification[1]}}</td>
+            <td>{{certification[2]}}</td>
+            <td>
+                <a class="card-img" href="../static/categories/{{certification[3]}}" >View Certificate</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>

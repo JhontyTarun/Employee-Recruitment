@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="text-center h3">Sub Categories</div>
+        <div class="container-fluid">
+            <table border="1" class="table table-bordered">
+                <tr>
+                    <th>subCategory Id</th>
+                    <th>category Id</th>
+                    <th>subCategory_name</th>
+                    <th>pictures</th>
+                </tr>
+                {% for subcategory in subcategories: %}
+                {% set category = get_categories_by_category_id(subcategory[1])%}
+                <tr>
+                    <td>{{subcategory[0]}}</td>
+                    <td>{{category[1]}}</td>
+                    <td>{{subcategory[2]}}</td>
+                    <td><img class="card-img-left" src="../static/categories/{{subcategory[3]}}"  style="height:100px;max-width:100%;"></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+</div>

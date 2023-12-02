@@ -1,0 +1,73 @@
+{% if 'role' in session and session ['role'] == 'recruiter' %}
+    {% include "recruiterHead.html" %}
+{% elif 'role' in session and session ['role'] == 'job_seeker' %}
+    {% include "job_seekerHead.html" %}
+{% endif %}
+
+<div class="container-fluid">
+    <div class="text-center h2 mt-3">Job Applications</div>
+    {% for job_application in job_applications %}
+    {% set job_recruitment = get_job_recruitments_by_job_recruitment_id(job_application[3]) %}
+    {% set job_seeker = get_name_by_job_seeker_id(job_application[4]) %}
+    <div class="card p-3 mt-3">
+        <div class="row">
+            <div class="col-md-2">
+                <h6>Date:</h6>
+                <div>{{job_application[1]}}</div>
+            </div>
+            <div class="col-md-2">
+                <h6>Job Details:</h6>
+                <div>{{job_recruitment[3]}}</div>
+                <div>{{job_recruitment[8]}}</div>
+            </div>
+            <div class="col-md-2">
+                <h6>Job Seeker :</h6>
+                <div>Name - {{job_seeker[1]}}</div>
+                <div>Email -{{job_seeker[3]}} </div>
+            </div>
+            <div class="col-md-2">
+                <h6>Qualifications :</h6>
+                <div>{{job_seeker[7]}}</div>
+            </div>
+            <div class="col-md-2">
+                <h6>resume :</h6>
+                <div>{{job_seeker[9]}}</div>
+            </div>
+            <div class="col-md-2">
+                <h6>Status:</h6>
+                <div>{{job_application[2]}}</div>
+                <div class="mt-3">
+                    {% if session['role'] == 'recruiter': %}
+                        {% if job_application[2] == "Applied" %}
+                            <div class="mt-3">
+                                <form action="accept_application" method="get">
+                                    <input type="hidden" name="job_application_id" value="{{job_application[0]}}">
+                                    <input type="submit" class="btn btn-success w-100 " value="accept_application">
+                                </form>
+                            </div>
+                            <div class="mt-3">
+                                <form action="reject_application" method="get">
+                                    <input type="hidden" name="job_application_id" value="{{job_application[0]}}">
+                                    <input type="submit" class="btn btn-danger w-100 " value="reject_application">
+                                </form>
+                            </div>
+                        {% endif %}
+                        {% if job_application[2] == "Accepted" %}
+                            <form action="schedule_interview" method="get">
+                                <input type="hidden" name="job_application_id" value="{{job_application[0]}}">
+                                <input type="submit" class="btn btn-success w-100 mt-3" value="schedule interview">
+                            </form>
+                        {% endif %}
+                    {% endif %}
+                    {% if job_application[2] == "scheduled" %}
+                    <form action="view_interview_schedule" method="get">
+                        <input type="hidden" name="job_application_id" value="{{job_application[0]}}">
+                        <input type="submit" class="btn btn-success w-100 mt-3" value=" view interview schedule">
+                    </form>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

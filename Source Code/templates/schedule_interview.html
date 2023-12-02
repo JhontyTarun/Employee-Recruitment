@@ -1,0 +1,34 @@
+{% include "recruiterHead.html" %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-4 mt-5">
+            <div class="card p-3">
+            <div class="text-center h2">Schedule Interview Here</div>
+                <form  action="schedule_interview_action" method='get'>
+                    <input type="hidden" name="job_application_id" value="{{job_application_id}}">
+                    <div class="tab-content container-fluid mt-5">
+                    </div>
+                    <div class="md-3 mt-3">
+                        <label for="interview_type">Interview Type</label>
+                        <input type="text" name="interview_type" id="interview_type" class="form-control"  required>
+                    </div>
+                    <div class="md-3 mt-3">
+                        <label for="date_time">choose Date&Time</label>
+                        <input type="datetime-local" name="date_time" id="date_time" class="form-control"  required>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <input type="submit" value="Add Schedile" class="btn btn-dark w-100">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-2">
+
+        </div>
+
+    </div>
+
+</div>

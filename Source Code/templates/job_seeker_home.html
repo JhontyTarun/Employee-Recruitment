@@ -1,0 +1,77 @@
+{% include "job_seekerHead.html" %}
+
+<div class="container-fluid">
+    <div class="text-center h2 mt-3">welcome Job Seeker</div>
+    {% for job_seeker in job_seekers: %}
+    <div class="card p-3 mt-3">
+        <div class="row">
+            <div class="col-md-2">
+                <h6>job_seeker_id</h6>
+                <div>{{job_seeker[0]}}</div>
+            </div>
+            <div class="col-md-2">
+                <h6>Name:</h6>
+                <div>{{job_seeker[1]}}</div>
+            </div>
+            <div class="col-md-2">
+                <h6> Phone:</h6>
+                <div>{{job_seeker[2]}}</div>
+            </div>
+            <div class="col-md-2">
+                <h6>Email :</h6>
+                <div>{{job_seeker[3]}}</div>
+            </div>
+            <div class="col-md-2">
+                <h6>Password :</h6>
+                <div>{{job_seeker[4]}}</div>
+            </div>
+             <div class="col-md-2">
+                <h6>Gender :</h6>
+                <div>{{job_seeker[5]}}</div>
+            </div>
+             <div class="col-md-2 mt-3">
+                <h6>Age :</h6>
+                <div>{{job_seeker[6]}}</div>
+             </div>
+            <div class="col-md-2 mt-3">
+                <h6>Qualification :</h6>
+                <div>{{job_seeker[7]}}</div>
+            </div>
+            <div class="col-md-2 mt-3">
+                <h6>Experience :</h6>
+                <div>{{job_seeker[8]}}</div>
+             </div>
+            <div class="col-md-2 mt-3">
+                <h6>Resume :</h6>
+                <a class="card-img" href="../static/categories/{{job_seeker[9]}}"  style="height:500px;width:90%;">View resume</a>
+            </div>
+            <div class="col-md-2 mt-3">
+                <h6>Certificates :</h6>
+                <div>
+                   <form action="add_certifications" method="get">
+                        <input type="hidden" name="job_seeker_id" value="{{job_seeker[0]}}">
+                        <input type="submit" class="btn btn-success w-100 " value="Add Certifications">
+                   </form>
+                   <form action="view_certifications" method="get">
+                        <input type="hidden" name="job_seeker_id" value="{{job_seeker[0]}}">
+                        <input type="submit" class="btn btn-success w-100 " value="View Certifications">
+                   </form>
+                </div>
+            </div>
+             <div class="col-md-2 mt-3">
+                <h6>Qualification :</h6>
+                <div>
+                   <form action="add_qualifications" method="get">
+                        <input type="hidden" name="job_seeker_id" value="{{job_seeker[0]}}">
+                        <input type="submit" class="btn btn-success w-100 " value="Add Qualification">
+                   </form>
+                   <form action="view_qualifications" method="get">
+                        <input type="hidden" name="job_seeker_id" value="{{job_seeker[0]}}">
+                        <input type="submit" class="btn btn-success w-100 " value="view Qualification">
+                   </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

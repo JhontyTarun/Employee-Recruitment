@@ -1,0 +1,18 @@
+{% include "job_seekerHead.html" %}
+
+<div class="container-fluid">
+    <form  action="apply_job_action" method='post'>
+    <div class="col-md-6">
+     <div class="card p-3 mt-5">
+        <div>
+            <label for="date">Choose Date</label>
+            <input type="date" id="date" value="{{date}}" class="form-control">
+        </div>
+            <input type="hidden" name="job_seeker_id" value="{{job_seeker_id}}">
+            <input type="submit" class="btn btn-success w-100 mt-3" value="Apply Job">
+        </div>
+     </div>
+    </form>
+</div>
+
+

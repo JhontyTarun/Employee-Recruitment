@@ -1,0 +1,28 @@
+
+<div class="container-fluid mt-3">
+    <div class="row">
+        {% for job_recruitment in job_recruitments %}
+        <div class="col-md-5">
+            <div class="card p-3">
+                <div class="card-title text-center h3">{{job_recruitment[3]}}</div>
+                <div class="row">
+                    <div class="md-6">
+                        <h5>{{job_recruitment[8]}}</h5>
+                        <h6>{{job_recruitment[10]}}</h6>
+                        <div>Openings-{{job_recruitment[6]}}</div>
+                        <div>skills - {{job_recruitment[7]}}</div>
+                        <div>{{job_recruitment[11]}} - {{job_recruitment[5]}} - {{job_recruitment[9]}}</div>
+                    </div>
+                </div>
+                <div class="md-4 mt-2">
+                    <h6>Description :</h6>
+                    <div>{{job_recruitment[4]}}</div>
+                </div>
+                <div class="md-4 mt-3">
+                     <a href="apply_job?job_recruitment_id={{job_recruitment[0]}}" class="btn btn-primary w-100">Apply Job</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

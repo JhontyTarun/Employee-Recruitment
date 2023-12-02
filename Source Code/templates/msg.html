@@ -1,0 +1,11 @@
+{% if 'role' in session and session ['role'] == 'admin' %}
+    {% include "adminHead.html" %}
+{% elif 'role' in session and session ['role'] == 'recruiter' %}
+    {% include "recruiterHead.html" %}
+{% elif 'role' in session and session ['role'] == 'job_seeker' %}
+    {% include "job_seekerHead.html" %}
+{% elif 'role' in session and session ['role'] == 'mainHead' %}
+    {% include "mainHead.html" %}
+{% endif %}
+
+<div class="text-center h4 mt-3">{{message}}</div>

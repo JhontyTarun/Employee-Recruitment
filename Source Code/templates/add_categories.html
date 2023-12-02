@@ -1,0 +1,43 @@
+{% include "adminHead.html" %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 mt-5">
+            <h3>Add Categories</h3>
+                <form  action="add_categories_action" method='post' enctype="multipart/form-data">
+                    <div class="tab-content container-fluid mt-1">
+                    </div>
+                    <div id="recriter" class="container tab-pane "></div>
+                    <div class="mb-3 mt-3">
+                       <label for="category_name">Category Name</label>
+                        <input type="text" name="category_name" id="category_name" class="form-control"  required>
+                    </div>
+                    <div class="mb-3 mt-3">
+                       <label for="picture"> Choose Picture</label>
+                        <input type="file" name="picture" id="picture"  class="form-control"  required>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <input type="submit" value="Add Category" class="btn btn-primary w-100">
+                    </div>
+                </form>
+        </div>
+        <div class="col-md-9">
+            <div class="text-center h2">Categories</div>
+                <div class="container-fluid">
+                    <table border="1" class="table table-bordered">
+                        <tr>
+                            <th>category_id</th>
+                            <th>category_name</th>
+                            <th>pictures</th>
+                        </tr>
+                        {% for category in categories: %}
+                        <tr>
+                            <td>{{category[0]}}</td>
+                            <td>{{category[1]}}</td>
+                            <td><img class="card-img-left" src="../static/categories/{{category[2]}}"  style="height:100px;max-width:100%;"></td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+        </div>
+    </div>
+</div>

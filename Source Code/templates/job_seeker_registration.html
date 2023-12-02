@@ -1,0 +1,62 @@
+{% include "mainHead.html" %}
+<div class="container-fluid mt-3 bg">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <form  action="job_seeker_registration_action" method='post' enctype="multipart/form-data">
+                <div class="card p-3 ">
+                    <h3>  Job Seeker registration</h3>
+                        <div class="row">
+                             <div class="col-md-6 mt-3">
+                                <label for="name">Name</label>
+                                <input type="text" name="name" id="name" class="form-control" placeholder="Enter Name" required>
+                             </div>
+                             <div class="col-md-6 mt-3">
+                                 <label for="phone">Phone</label>
+                                 <input type="number" name="phone" id="phone" class="form-control" placeholder="Enter Phone" required>
+                             </div>
+                             <div class="col-md-6 mt-3">
+                                 <label for="email">Email</label>
+                                 <input type="email" name="email" id="email" class="form-control" placeholder="Enter Email" required>
+                             </div>
+                             <div class="col-md-6 mt-3">
+                                 <label for="password">Password</label>
+                                 <input type="password" name="password"  id="password" class="form-control" placeholder="Enter Password" required>
+                             </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mt-3">
+                                 <label for="gender">Gender</label>
+                                 <input type="text" name="gender"  id="gender" class="form-control" placeholder="Enter Gender" required>
+                             </div>
+                            <div class="col-md-6 mt-3">
+                                <label for="age">Age</label>
+                                <input type="number" name="age"  id="age" class="form-control" placeholder="Enter Age" required>
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <label for="qualification">Qualification</label>
+                                <input type="text" name="qualification"  id="qualification" class="form-control" placeholder="Enter Qualification" required>
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <label for="experience">Experience</label>
+                                <input type="text" name="experience"  id="experience" class="form-control" placeholder="Enter Experience" required>
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <label for="resume">Resume</label>
+                                <input type="file" name="resume"  id="resume" class="form-control" placeholder="Enter Resume" required>
+                            </div>
+                            <div class="col-md-6 mt-4">
+                                <input type="submit" value="Register" class="btn btn-primary w-100">
+                                Already has account?
+                                <a href="/job_seeker_login">click here to login</a>
+                            </div>
+                            <div>
+
+                            </div>
+                        </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

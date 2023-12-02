@@ -1,0 +1,72 @@
+{% include "recruiterHead.html" %}
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+            <form  action="post_job_recruitments_action" method='post' enctype="multipart/form-data">
+            <div class="tab-content container-fluid mt-1"></div>
+            <div class="card p-3 ">
+            <h2>Add Job Recruitment</h2>
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4 mt-3 center">
+                        <label>choose subCategory</label>
+                        <select name="subCategory_id" id="subCategory_id" class="form-control">
+                            <option value="">choose subcategory</option>
+                            {% for subcategory in subcategories %}
+                            <option value="{{subcategory[0]}}">{{subcategory[1]}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-2">
+                        <label for="job_title">Job Title</label>
+                        <input type="text" name="job_title" id="job_title" class="form-control" placeholder="Enter Job Title" required>
+                    </div>
+                    <div class="col-md-6 mt-2">
+                         <label for="experience">Experience</label>
+                    <input type="text" name="experience" id="experience" class="form-control" placeholder="Enter Description" required>
+                    </div>
+                    <div class="col-md-6 mt-2">
+                        <label for="number_of_openings">Number of openings</label>
+                        <input type="number" name="number_of_openings" id="number_of_openings" class="form-control"  required>
+                    </div>
+                    <div class="col-md-6 mt-2">
+                        <label for="skills">Skills</label>
+                        <input type="text" name="skills" id="skills" class="form-control" placeholder="Enter skills" required>
+                    </div>
+                    <div class="col-md-6 mt-2">
+                        <label for="company_profile">Company Profile</label>
+                        <input type="text" name="company_profile" id="company_profile" class="form-control"  required>
+                    </div>
+                    <div class="col-md-6 mt-2">
+                        <label for="package">Package</label>
+                        <input type="number" name="package" id="package" class="form-control"  required>
+                    </div>
+                     <div class="col-md-6 mt-2">
+                        <label for="job_location">Job Location</label>
+                        <input type="text" name="job_location" id="job_location" class="form-control"  required>
+                    </div>
+                     <div class="col-md-6 mt-2">
+                        <label for="working_hours">Working Hours</label>
+                        <input type="text" name="working_hours" id="working_hours" class="form-control"  required>
+                    </div>
+                </div>
+                <div class="col-md-12 mt-2">
+                    <label for="description">Description</label>
+                    <textarea  name="description" id="description" class="form-control" placeholder="Enter Description" required></textarea>
+                </div>
+                <div class="md-3 mt-2">
+                    <input type="submit" value="Add Job Recruitment" class="btn btn-primary w-100">
+                </div>
+            </div>
+            </form>
+        </div>
+        <div class="col-md-4">
+        </div>
+    </div>
+</div>
+
+

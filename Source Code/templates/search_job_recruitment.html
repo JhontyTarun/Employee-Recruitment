@@ -1,0 +1,42 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        get_job_recruitments()
+        $("#job_title").on("keyup",function(){
+            alert('hi')
+            get_job_recruitments()
+        });
+    });
+
+    function get_job_recruitments(){
+        let job_title = $("#job_title").val()
+        let url="http://127.0.0.1:5000/get_job_recruitments?job_title="+job_title
+        $.get(url,function(data,status){
+            console.log(data)
+            $("#job_recruitments").html(data)
+        })
+    }
+</script>
+
+{% if session['role'] == 'job_seeker': %}
+    {% include "job_seekerHead.html" %}
+{% endif %}
+
+<form action="search_job_recruitment_action" method="post">
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md-5">
+                <label for="job_titles">Job Title</label>
+                <input type="text" list="job_titles" id="job_title" class="form-control" required>
+                <datalist id="job_titles" >
+                    {% for job_title in job_titles %}
+                        <option value="{{job_title[0]}}">
+                    {% endfor %}
+                </datalist>
+            </div>
+        </div>
+    </div>
+</form>
+<div id="job_recruitments">
+
+</div>

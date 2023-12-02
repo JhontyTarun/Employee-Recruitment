@@ -1,0 +1,28 @@
+{% include "mainHead.html" %}
+
+<div class="container-fluid" >
+    <div class="row">
+        <div class="col-md-3 mt-5">
+            <h3>Admin login</h3>
+            <form action="admin_login_action" method="post">
+                <div id="doctor" class="container tab-pane "></div>
+                <div class="md-3 mt-3">
+                   <label for="username">Username</label>
+                    <input type="text" name="username" id="username" class="form-control" placeholder="Enter Username" required>
+                </div>
+                <div class="md-3 mt-3">
+                   <label for="password">Password</label>
+                    <input type="password" name="password"  id="password" class="form-control" placeholder="Enter Password" required>
+                </div>
+                <div class="md-3 mt-3 ">
+                    <input type="submit" value="LOGIN" class="btn btn-primary w-100">
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <div class="mt-3">
+                <img src="https://timesproweb-static-backend-dev.s3.amazonaws.com/IIM_Lucknow_Executive_Certificate_Programme_In_Global_Business_Management_banner_c94668d405.web" style="width:150%;height:570px;">
+            </div>
+        </div>
+    </div>
+</div>

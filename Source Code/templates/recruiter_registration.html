@@ -1,0 +1,50 @@
+{% include "mainHead.html" %}
+<div class="container mt-3 ">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <form  action="recruiter_registration_action" method='post'>
+            <h3>Recruiter Register Here</h3>
+                <div class="col-md-6 mt-3">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Enter name" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="phone">Phone</label>
+                    <input type="number" name="phone" id="phone" class="form-control" placeholder="Enter Phone" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" class="form-control" placeholder="Enter Email" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="password">Password</label>
+                    <input type="password" name="password"  id="password" class="form-control" placeholder="Enter Password" required>
+                </div>
+                <div class="col-md-6 ">
+                   <label for="gender">Gender</label>
+                    <input type="text" name="gender" id="gender" class="form-control" placeholder="Enter Gender" required>
+                </div>
+                <div class="col-md-6 ">
+                   <label for="age">Age</label>
+                    <input type="number" name="age"  id="age" class="form-control" placeholder="Enter age" required>
+                </div>
+                <div class="col-md-6 ">
+                   <label for="company_name">Company Name</label>
+                    <input type="text" name="company_name"  id="company_name" class="form-control" placeholder="Enter company name" required>
+                </div>
+                <div class="col-md-6 mt-3">
+                    <input type="submit" value="Register" class="btn btn-primary w-100">
+                </div>
+                 <div>
+                   already have account?
+                    <a href="/recruiter_login">Click here to Login</a>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4">
+        </div>
+    </div>
+</div>
+
+

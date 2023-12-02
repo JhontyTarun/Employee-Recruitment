@@ -1,0 +1,69 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        get_subcategories()
+        $("category_id2").on("change",function(){
+             get_subcategories()
+        });
+    });
+    function get_subcategories(){
+        let category_id = $("#category_id2").val()
+        let url="http://127.0.0.1:5000/get_subcategories?category_id="+category_id
+        $.get(url,function(data, status){
+            console.log(data)
+            $("#categories").html(data)
+        });
+    };
+</script>
+
+{% include "adminHead.html" %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 mt-5">
+            <h3>Add SubCategories</h3>
+                <form  action="add_subcategories_action" method='post' enctype="multipart/form-data">
+                    <div class="tab-content container-fluid mt-1">
+                    </div>
+                    <div id="recruiter" class="container tab-pane "></div>
+                     <div class="md-3 mt-3">
+                        <label>choose Category</label>
+                        <select name="category_id" id="category_id" class="form-control">
+                            <option value="">choose category</option>
+                            {% for category in categories %}
+                            <option value="{{category[0]}}">{{category[1]}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="md-3 mt-3">
+                       <label for="subCategory_name">SubCategory Name</label>
+                        <input type="text" name="subCategory_name" id="subCategory_name" placeholder="Enter Sub Category Name" class="form-control"  required>
+                    </div>
+                    <div class="md-3 mt-3">
+                       <label for="picture"> Choose Picture</label>
+                        <input type="file" name="picture" id="picture"  class="form-control"  required>
+                    </div>
+                    <div class="md-3 mt-3">
+                        <input type="submit" value="Add SubCategory" class="btn btn-primary w-100">
+                    </div>
+                </form>
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4 mt-3">
+                    <label>choose Category</label>
+                    <select name="category_id2" id="category_id2" class="form-control">
+                        <option value="">choose category</option>
+                        {% for category in categories %}
+                        <option value="{{category[0]}}">{{category[1]}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-4">
+                </div>
+            </div>
+            <div id="categories"></div>
+        </div>
+    </div>
+</div>
